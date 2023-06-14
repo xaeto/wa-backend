@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 const port = 3000;
 
 app.get("/leaderboard", (req, res) => {
-  const sql = "select * from leaderboard";
+  const sql = "select * from leaderboard order by score desc limit 10";
   const params = [];
   db.all(sql, params, (err, rows) => {
     if(err) {
