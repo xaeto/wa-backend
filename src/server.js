@@ -13,6 +13,10 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 const port = 3000;
 
+app.get("/debug", (req, res) => {
+  res.send("debug")
+});
+
 app.get("/leaderboard", (req, res) => {
   const sql = "select * from leaderboard order by score desc limit 10";
   const params = [];
