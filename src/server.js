@@ -49,7 +49,7 @@ app.post("/leaderboard/multiplayer", (req, res) => {
       res.status(400).json({"error": err.message});
       return;
     }
-    res.status(201);
+    res.sendStatus(201)
   });
 });
 
@@ -65,7 +65,7 @@ app.post("/leaderboard", (req, res) => {
       res.status(400).json({"error": err.message});
       return;
     }
-    res.status(201);
+    res.sendStatus(201)
   });
 });
 
