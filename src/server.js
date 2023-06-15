@@ -41,7 +41,7 @@ app.post("/leaderboard/multiplayer", (req, res) => {
   const name = req.body["name"];
   const score = req.body["score"];
   const sql = `
-    INSERT INTO MultiplayerLeaderboard (name, score) VALUES ("${team}", ${score})
+    INSERT INTO MultiplayerLeaderboard (name, score) VALUES ("${name}", ${score})
   `;
   const params = [];
   db.run(sql, params, (err, rows) => {
@@ -54,7 +54,7 @@ app.post("/leaderboard/multiplayer", (req, res) => {
 });
 
 app.post("/leaderboard", (req, res) => {
-  const name = req.body["username"];
+  const name = req.body["name"];
   const score = req.body["score"];
   const sql = `
     INSERT INTO leaderboard (name, score) VALUES ("${name}", ${score})
