@@ -38,7 +38,7 @@ app.get("/leaderboard/multiplayer", (req, res) => {
 });
 
 app.post("/leaderboard/multiplayer", (req, res) => {
-  const name = req.body["team"];
+  const name = req.body["name"];
   const score = req.body["score"];
   const sql = `
     INSERT INTO MultiplayerLeaderboard (name, score) VALUES ("${team}", ${score})
